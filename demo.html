@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style type="text/css">
+		html,body{padding: 0;margin: 0;}
+
+		.show{text-align: center;font-size: 32px;font-weight: bolder;margin-top: 20px;}
+
+		.container{width: 900px;position: relative;margin: 0 auto;}
+		.container .item{width: 100%;}
+		.container .item h3{font-size: 18px;}
+		.container .item .input_con{width: 100%;height: 44px;background: #eee;border-radius: 6px;border: 1px solid #c0c0c0;display: flex;justify-content: space-around;align-items: center;padding: 0 10px;box-sizing: border-box;}
+		.container .item .input_con input[type="number"]{font-size: 14px;outline: 0;color: #000;flex: 1;height: 24px;padding: 0 3px;}
+		.container .item .input_con span{font-size: 18px;margin: 0 4px;font-weight: bolder;}
+		.container button{font-weight: 18px;display: block;padding: 10px 18px;cursor: pointer;background: #fff;border: none;outline: none;border: 1px solid #aaa;border-radius: 4px;float: right;margin: 18px 0 0 10px;transition: all ease 0.2s;-webkit-transition: all ease 0.2s;}
+		.container:after{content: '\0020';display: block;height: 0;clear: both;}
+		.container button:hover{background: #eee;}
+
+		.params_show{width: 900px;margin: 0 auto;font-size: 0;}
+		.params_show .code{display: inline-block;vertical-align: middle;font-size: 14px;width: 50%;}
+	</style>
+</head>
+<body>
+	
+	<div class="show"></div>
+
+	<div class="container">
+		<div class="item">
+			<h3>开始时间：</h3>
+			<div class="input_con">
+				<input min="-9999" max="9999" step="1" type="number" placeholder="year"></input>
+				<span>-</span>
+				<input min="1" max="12" step="1" type="number" placeholder="month"></input>
+				<span>-</span>
+				<input min="1" max="31" step="1" type="number" placeholder="day"></input>
+				<span>&nbsp;</span>
+				<input min="0" max="23" step="1" type="number" placeholder="hour"></input>
+				<span>:</span>
+				<input min="0" max="59" step="1" type="number" placeholder="minute"></input>
+				<span>:</span>
+				<input min="0" max="59" step="1"type="number" placeholder="seconds"></input>
+				<span>:</span>
+				<input min="0" max="999" step="1" type="number" placeholder="millisecond"></input>
+			</div>
+		</div>
+		<div class="item">
+			<h3>结束时间：</h3>
+			<div class="input_con">
+				<input min="-9999" max="9999" step="1" type="number" placeholder="year"></input>
+				<span>-</span>
+				<input min="1" max="12" step="1" type="number" placeholder="month"></input>
+				<span>-</span>
+				<input min="1" max="31" step="1" type="number" placeholder="day"></input>
+				<span>&nbsp;</span>
+				<input min="0" max="23" step="1" type="number" placeholder="hour"></input>
+				<span>:</span>
+				<input min="0" max="59" step="1" type="number" placeholder="minute"></input>
+				<span>:</span>
+				<input min="0" max="59" step="1"type="number" placeholder="second"></input>
+				<span>:</span>
+				<input min="0" max="999" step="1" type="number" placeholder="millisecond"></input>
+			</div>
+		</div>
+		<div class="item">
+			<h3>计时单位：</h3>
+			<div class="input_con">
+				<label for="year">
+					<input type="checkbox" id="year"></input>
+					<span>年</span>
+				</label>
+				<label for="month">
+					<input type="checkbox" id="month"></input>
+					<span>月</span>
+				</label>
+				<label for="day">
+					<input type="checkbox" id="day"></input>
+					<span>日</span>
+				</label>
+				<label for="hour">
+					<input type="checkbox" id="hour"></input>
+					<span>时</span>
+				</label>
+				<label for="minute">
+					<input type="checkbox" id="minute"></input>
+					<span>分</span>
+				</label>
+				<label for="second">
+					<input type="checkbox" id="second"></input>
+					<span>秒</span>
+				</label>
+			</div>
+		</div>
+		<button>开始</button>
+		<button>暂停</button>
+		<button>停止</button>
+	</div>
+	
+	<div class="params_show">
+		<pre class="code params">
+{
+  	startTime: "",
+  	endTime: "",
+  	onStart: function() {
+		console.log('start!');
+  	},
+  	onChange: function(value) {
+		
+  	},
+  	onEnd: function() {
+		console.log('end!');
+  	}
+}
+		</pre>
+		<pre class="code value">
+		{
+		  "startTime": "",
+		  "endTime": "",
+		  "units": "",
+		  "value": "",
+		}
+		</pre>
+	</div>
+
+
+
+	<script type="text/javascript" src="./countdown.js"></script>
+
+	<script type="text/javascript" src="./app.js"></script>
+
+</body>
+</html>
