@@ -6,7 +6,7 @@
 	<style type="text/css">
 		html,body{padding: 0;margin: 0;}
 
-		.show{text-align: center;font-size: 32px;font-weight: bolder;margin-top: 20px;}
+		#show{text-align: center;font-size: 32px;font-weight: bolder;margin-top: 20px;}
 
 		.container{width: 900px;position: relative;margin: 0 auto;}
 		.container .item{width: 100%;}
@@ -19,30 +19,33 @@
 		.container button:hover{background: #eee;}
 
 		.params_show{width: 900px;margin: 0 auto;font-size: 0;}
-		.params_show .code{display: inline-block;vertical-align: middle;font-size: 14px;width: 50%;}
+		.params_show .code{font-size: 14px;}
 	</style>
 </head>
 <body>
 	
-	<div class="show"></div>
+	<div id="show">
+		<div class="range"></div>
+		<div class="timer"></div>
+	</div>
 
 	<div class="container">
 		<div class="item">
 			<h3>开始时间：</h3>
 			<div class="input_con">
-				<input min="-9999" max="9999" step="1" type="number" placeholder="year"></input>
+				<input value="2016" min="-9999" max="9999" step="1" type="number" placeholder="year"></input>
 				<span>-</span>
-				<input min="1" max="12" step="1" type="number" placeholder="month"></input>
+				<input value="01" min="1" max="12" step="1" type="number" placeholder="month"></input>
 				<span>-</span>
-				<input min="1" max="31" step="1" type="number" placeholder="day"></input>
+				<input value="01" min="1" max="31" step="1" type="number" placeholder="day"></input>
 				<span>&nbsp;</span>
-				<input min="0" max="23" step="1" type="number" placeholder="hour"></input>
+				<input value="19" min="0" max="23" step="1" type="number" placeholder="hour"></input>
 				<span>:</span>
-				<input min="0" max="59" step="1" type="number" placeholder="minute"></input>
+				<input value="35" min="0" max="59" step="1" type="number" placeholder="minute"></input>
 				<span>:</span>
-				<input min="0" max="59" step="1"type="number" placeholder="second"></input>
+				<input value="11" min="0" max="59" step="1"type="number" placeholder="second"></input>
 				<span>:</span>
-				<input min="0" max="999" step="1" type="number" placeholder="millisecond"></input>
+				<input value="0" min="0" max="999" step="1" type="number" placeholder="millisecond"></input>
 			</div>
 		</div>
 		<div class="item">
@@ -66,61 +69,32 @@
 		<div class="item">
 			<h3>计时单位：</h3>
 			<div class="input_con">
-				<label for="year">
-					<input type="checkbox" id="year"></input>
-					<span>年</span>
-				</label>
-				<label for="month">
-					<input type="checkbox" id="month"></input>
-					<span>月</span>
-				</label>
 				<label for="day">
-					<input type="checkbox" id="day"></input>
-					<span>日</span>
+					<input type="checkbox" id="day" checked="checked"></input>
+					<span>天</span>
 				</label>
 				<label for="hour">
-					<input type="checkbox" id="hour"></input>
+					<input type="checkbox" id="hour" checked="checked"></input>
 					<span>时</span>
 				</label>
 				<label for="minute">
-					<input type="checkbox" id="minute"></input>
+					<input type="checkbox" id="minute" checked="checked"></input>
 					<span>分</span>
 				</label>
 				<label for="second">
-					<input type="checkbox" id="second"></input>
+					<input type="checkbox" id="second" checked="checked"></input>
 					<span>秒</span>
 				</label>
 			</div>
 		</div>
-		<button id="start">开始</button>
-		<button id="pause">暂停</button>
-		<button id="stop">停止</button>
+		<button id="start" onclick="init()">开始</button>
+		<button id="pause" onclick="countdown.toggle()">暂停</button>
+		<button id="stop" onclick="countdown.stop()">停止</button>
 	</div>
 	
 	<div class="params_show">
-		<pre class="code params">
-{
-  	startTime: "",
-  	endTime: "",
-  	onStart: function() {
-		console.log('start!');
-  	},
-  	onChange: function(value) {
-		
-  	},
-  	onEnd: function() {
-		console.log('end!');
-  	}
-}
-		</pre>
-		<pre class="code value">
-		{
-		  "startTime": "",
-		  "endTime": "",
-		  "units": "",
-		  "value": "",
-		}
-		</pre>
+		<pre class="code params"></pre>
+		<pre class="code value"></pre>
 	</div>
 
 	
