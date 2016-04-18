@@ -65,8 +65,7 @@
             minute: false,
             second: true
         };
-
-        if (this.params.startTime.toString() === 'Invalid Date' || this.params.endTime === null ? 0 : this.params.endTime.toString() === 'Invalid Date') {
+        if (this.params.startTime.toString() === 'Invalid Date' || (this.params.endTime === null ? 0 : this.params.endTime.toString() === 'Invalid Date')) {
             _erro('Invalid Date in parmas!');
         }
         _startMs = Date.parse(this.params.startTime);
