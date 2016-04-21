@@ -92,7 +92,6 @@
                 }, 50);
                 return;
             } else {
-
                 var _s = Date.now();
                 var value = _formatTimeByUnit(_startMs, _endMs, _this.params.unit);
                 _endMs = _endMs + _diff;
