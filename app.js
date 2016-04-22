@@ -54,6 +54,5 @@ var init = function(){
 		document.querySelectorAll('.code')[0].innerHTML = '参数：' + JSON.stringify(options);
 		document.querySelectorAll('.code')[1].innerHTML = '结果：' + JSON.stringify(value);
 	}
-
 }
 
