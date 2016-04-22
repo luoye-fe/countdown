@@ -59,6 +59,6 @@ var countDown = CountDown.init({
 
 countDown.start = function(){};  // 开始时触发事件
 countDown.change = function(){};  // 改变时触发事件
-countDown.toggle = function(){};  // 暂停或继续
-countDown.stop = function(){};  // 停止
+countDown.toggle();  // 暂停或继续
+countDown.stop();  // 停止
 ```

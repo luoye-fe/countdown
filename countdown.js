@@ -16,9 +16,11 @@
     }
 
     var _startMs = _endMs = null;
+    
     var _diff;
 
     var _result = {};
+
     var timeMsMap = {
         day: 24 * 60 * 60 * 1000,
         hour: 60 * 60 * 1000,
@@ -50,7 +52,6 @@
 
     var countDown = function(params) {
         this.params = {};
-        var _unit = {};
         this.params = _mixin(this.params, params);
         this.params.startTime = this.params.startTime ? new Date(this.params.startTime) : Date.now();
         this.params.endTime = this.params.endTime ? new Date(this.params.endTime) : null;
