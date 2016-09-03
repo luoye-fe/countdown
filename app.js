@@ -50,7 +50,7 @@ var init = function(){
 
 	countdown.change = function(value){
 		console.log(value);
-		document.querySelectorAll('.timer')[0].innerHTML = (value.day ? value.day + '天' : '') + (value.hour ? value.hour + '时' : '') +(value.minute ? value.minute + '分' : '') +(value.second ? value.second + '秒' : '');
+		document.querySelectorAll('.timer')[0].innerHTML = value.day + '天' + value.hour + '时' + value.minute + '分' + value.second + '秒';
 		document.querySelectorAll('.code')[0].innerHTML = '参数：' + JSON.stringify(options);
 		document.querySelectorAll('.code')[1].innerHTML = '结果：' + JSON.stringify(value);
 	}
