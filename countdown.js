@@ -99,7 +99,8 @@
 				var _e = Date.now();
 				var diffPerFunc = _e - _s;
 				var timer = window.setTimeout(function() {
-					if (_endMs <= _startMs) {
+					if (_endMs < _startMs) {
+						_this.change && _this.change(value);
 						_this.stop && _this.stop();
 						clearTimeout(timer);
 						return;
